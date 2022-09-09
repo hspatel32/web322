@@ -15,10 +15,14 @@ var HTTP_PORT = process.env.PORT || 8080;
 var express = require("express");
 var app = express();
 
+function onHttpStart() {
+    console.log("Express http server listening on: " + HTTP_PORT);
+  }
+  
 // setup a 'route' to listen on the default url path
 app.get("/", (req, res) => {
-    res.send("Harsh Shaileshkumar Patel-144938206");
+    res.send("<h2>Harsh Shaileshkumar Patel-144938206</h2>");
 });
 
 // setup http server to listen on HTTP_PORT
-app.listen(HTTP_PORT);
+app.listen(HTTP_PORT, onHttpStart);
